@@ -13,7 +13,7 @@
  */
 
 const SHEET_NAME = "Reviews";
-const HEADERS = ["Submitted At (UTC)", "Name", "Rating", "Feedback", "Source"];
+const HEADERS = ["Submitted At", "Name", "Rating", "Feedback", "Source"];
 
 function setupSheet() {
   const spreadsheetId = PropertiesService.getScriptProperties().getProperty("SPREADSHEET_ID");
@@ -46,6 +46,8 @@ function doPost(e) {
     const message = cleanText(params.message, 1000);
     const rating = Number(params.rating);
     const source = cleanText(params.source, 500);
+    const submittedAt = new Date(params.submittedAt || "");
+    const safeSubmittedAt = Number.isNaN(submittedAt.getTime()) ? new Date() : submittedAt;
 
     if (!name || !message || !Number.isInteger(rating) || rating < 1 || rating > 5) {
       return jsonResponse({ ok: false, error: "Invalid submission." });
@@ -66,7 +68,7 @@ function doPost(e) {
       }
 
       sheet.appendRow([
-        new Date(),
+        safeSubmittedAt,
         safeCell(name),
         rating,
         safeCell(message),
