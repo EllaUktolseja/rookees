@@ -211,6 +211,8 @@
 
 .story-product__image {
   aspect-ratio: 4 / 4.2;
+  object-fit: contain;
+  padding: clamp(8px, 2vw, 18px);
   border-radius: var(--radius-lg, 24px);
   background: var(--color-surface, #fff);
 }
