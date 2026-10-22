@@ -54,13 +54,13 @@
 }
 
 .product-page .section-padding {
-  padding-block: clamp(76px, 10vw, 132px);
+  padding-block: clamp(60px, 7vw, 96px);
 }
 
 /* HERO */
 
 .product-hero {
-  padding-block: clamp(60px, 8vw, 112px);
+  padding-block: clamp(52px, 7vw, 96px);
   background: var(--color-cream, #f8f1e7);
 }
 
@@ -526,7 +526,7 @@
 /* CLOSING CTA */
 
 .product-cta {
-  padding-block: clamp(72px, 9vw, 112px);
+  padding-block: clamp(60px, 7vw, 96px);
   background: var(--color-brown, #50362c);
   color: #fffaf2;
 }
