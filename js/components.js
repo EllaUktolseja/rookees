@@ -1,94 +1,201 @@
 function renderNavbar() {
   const header = document.querySelector("#site-header");
 
-  if (!header) return;
+  if (!header || header.children.length > 0) return;
 
   header.innerHTML = `
     <nav class="site-nav" aria-label="Main navigation">
       <div class="site-nav__inner">
-        <a class="site-nav__brand" href="./index.html" aria-label="Rookees home">
-          <img
+
+        <!-- Left: Brand -->
+        <a class="site-nav__brand" href="./index.html" aria-label="ROOKEES home">
+        <img
             class="site-nav__logo"
-            src="./assets/images/rookees-logo-removebg.png"
-            alt="Rookees"
-          />
+            src="./assets/images/rookees-logo.svg"
+            alt="ROOKEES"
+        />
         </a>
 
-        <div class="site-nav__links" id="nav-links">
-          <a class="site-nav__link" href="./index.html" aria-current="page">Home</a>
-          <a class="site-nav__link" href="./about.html">Our Story</a>
-          <a class="site-nav__link" href="./products.html">The Product</a>
-          <a class="site-nav__link" href="./reviews.html">Reviews</a>
-        </div>
-
-        <div class="site-nav__actions">
-          <a class="button button--primary site-nav__cta" href="./products.html">
-            Explore Rookees <span aria-hidden="true">↗</span>
+        <!-- Center: Navigation links -->
+        <div
+          class="site-nav__links"
+          id="rookees-navigation"
+          data-site-nav
+        >
+          <a class="site-nav__link" data-nav-link href="./index.html">
+            Home
           </a>
 
-          <button
-            class="site-nav__toggle"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-            aria-controls="nav-links"
-          >
-            <span aria-hidden="true">☰</span>
-          </button>
+          <a class="site-nav__link" data-nav-link href="./about.html">
+            Our Story
+          </a>
+
+          <a class="site-nav__link" data-nav-link href="./products.html">
+            Product
+          </a>
+
+          <a class="site-nav__link" data-nav-link href="./reviews.html">
+            Reviews
+          </a>
         </div>
+
+        <!-- Right: Action buttons -->
+        <div class="site-nav__actions">
+          <a
+            class="site-nav__button site-nav__button--order"
+            href="./products.html"
+          >
+            Order <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <!-- Mobile menu toggle -->
+        <button
+          class="site-nav__toggle"
+          type="button"
+          data-menu-toggle
+          aria-label="Toggle navigation menu"
+          aria-controls="rookees-navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
       </div>
     </nav>
   `;
-
-  const toggle = header.querySelector(".site-nav__toggle");
-  const links = header.querySelector("#nav-links");
-
-  toggle?.addEventListener("click", () => {
-    const isOpen = links.classList.toggle("is-open");
-
-    toggle.setAttribute("aria-expanded", String(isOpen));
-    toggle.setAttribute(
-      "aria-label",
-      isOpen ? "Close navigation menu" : "Open navigation menu",
-    );
-    toggle.querySelector("span").textContent = isOpen ? "×" : "☰";
-  });
-
-  links?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      links.classList.remove("is-open");
-      toggle?.setAttribute("aria-expanded", "false");
-      toggle?.setAttribute("aria-label", "Open navigation menu");
-
-      const icon = toggle?.querySelector("span");
-      if (icon) icon.textContent = "☰";
-    });
-  });
 }
 
 function renderFooter() {
   const footer = document.querySelector("#site-footer");
 
-  if (!footer) return;
-
-  footer.className = "site-footer";
+  if (!footer || footer.children.length > 0) return;
 
   footer.innerHTML = `
-    <div class="site-footer__inner section-shell">
-      <a class="site-footer__brand" href="./index.html">Rookees.</a>
+    <div class="site-footer__inner">
+      <div class="site-footer__main">
+      <img
+            class="site-nav__logo"
+            src="./assets/images/rookees-logo.svg"
+            alt="ROOKEES"
+            href="./index.html"
+        />
 
-      <p class="site-footer__copy">
-        © <span data-current-year></span> Rookees. Made with care.
-      </p>
+        <p class="site-footer__description">
+          Two classics, one indulgence. A little twist of sweetness
+          made to bring more joy to your everyday moments.
+        </p>
+      </div>
 
-      <div class="site-footer__links">
-        <a href="./about.html">Our Story</a>
-        <a href="./products.html">Products</a>
-        <a href="./reviews.html">Reviews</a>
+      <div>
+        <h2 class="site-footer__heading">Explore</h2>
+        <nav class="site-footer__links" aria-label="Footer navigation">
+          <a href="./index.html">Home</a>
+          <a href="./about.html">Our Story</a>
+          <a href="./products.html">Our Product</a>
+          <a href="./reviews.html">Reviews</a>
+        </nav>
+      </div>
+
+      <div>
+        <h2 class="site-footer__heading">Get in Touch</h2>
+        <div class="site-footer__contact">
+          <a href="./reviews.html">Share Your Thoughts ↗</a>
+          <a href="./products.html">Discover Our Product ↗</a>
+        </div>
       </div>
     </div>
-  `;
 
-  const year = footer.querySelector("[data-current-year]");
-  if (year) year.textContent = new Date().getFullYear();
+    <div class="site-footer__bottom">
+      <p>
+        © ${new Date().getFullYear()} ROOKEES. All rights reserved.
+      </p>
+    </div>
+  `;
+}
+
+function initSharedComponents() {
+  initMobileNavigation();
+  initActiveNavigation();
+  initBackToTop();
+}
+
+function initMobileNavigation() {
+  const toggle = document.querySelector("[data-menu-toggle]");
+  const navigation = document.querySelector("[data-site-nav]");
+
+  if (!toggle || !navigation) return;
+
+  function closeMenu() {
+    toggle.setAttribute("aria-expanded", "false");
+    navigation.classList.remove("is-open");
+    document.body.classList.remove("menu-open");
+  }
+
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    navigation.classList.toggle("is-open", !isOpen);
+    document.body.classList.toggle("menu-open", !isOpen);
+  });
+
+  navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!toggle.contains(event.target) && !navigation.contains(event.target)) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 700) {
+      closeMenu();
+    }
+  });
+}
+
+function initActiveNavigation() {
+  const currentPage =
+    window.location.pathname.split("/").pop().toLowerCase() || "index.html";
+
+  document.querySelectorAll("[data-nav-link]").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href) return;
+
+    const linkPage = href.split("/").pop().split("?")[0].toLowerCase();
+    const isActive = linkPage === currentPage;
+
+    link.classList.toggle("is-active", isActive);
+
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+}
+
+function initBackToTop() {
+  document.querySelectorAll("[data-back-to-top]").forEach((button) => {
+    button.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+      });
+    });
+  });
 }

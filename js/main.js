@@ -1,11 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  if (typeof renderNavbar === "function") {
-    renderNavbar();
-  }
+  renderNavbar();
+  renderFooter();
 
-  if (typeof renderFooter === "function") {
-    renderFooter();
-  }
+  initSharedComponents();
 
   if (typeof initHomePage === "function") {
     initHomePage();

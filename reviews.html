@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Share your thoughts about Rookees. Your feedback helps us make every bite better."
+    />
+
+    <title>Reviews & Feedback | Rookees</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/reviews.css" />
+
+    <script src="./js/components.js" defer></script>
+    <script src="./js/reviews.js" defer></script>
+    <script src="./js/main.js" defer></script>
+  </head>
+
+  <body>
+    <header id="site-header"></header>
+
+    <main class="reviews-page">
+      <section class="reviews-hero">
+        <div class="container reviews-hero__inner">
+          <p class="section__eyebrow">A LITTLE LOVE GOES A LONG WAY</p>
+
+          <h1 class="reviews-hero__title">
+            Every bite has a story.<br />
+            <span>Tell us yours.</span>
+          </h1>
+
+          <p class="reviews-hero__description">
+            Your thoughts, honest opinions, and little suggestions mean a lot to
+            us. Help us make the Rookees experience even sweeter.
+          </p>
+
+          <a class="btn btn--primary" href="#share-feedback">
+            Share Your Thoughts
+          </a>
+
+          <div class="reviews-hero__decoration" aria-hidden="true">
+            <span class="reviews-hero__sparkle">✳</span>
+            <span class="reviews-hero__heart">♡</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews-wall" aria-labelledby="reviews-wall-title">
+        <div class="container">
+          <div class="reviews-section-heading">
+            <div>
+              <p class="section__eyebrow">THE ROOKEE'S CORNER</p>
+              <h2 class="section__title" id="reviews-wall-title">
+                A space for your voice.
+              </h2>
+            </div>
+
+            <p class="reviews-section-heading__description">
+              Every piece of feedback gives us a new perspective.
+            </p>
+          </div>
+
+          <div class="reviews-empty" id="reviews-empty">
+            <span class="reviews-empty__icon" aria-hidden="true">♡</span>
+            <h3>Your words belong here.</h3>
+            <p>
+              We're making room for our first reviews. Be one of the first to
+              share your thoughts with Rookees.
+            </p>
+            <a class="text-link" href="#share-feedback">
+              Leave the first review <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="reviews-list" id="reviews-list" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="feedback-section" id="share-feedback">
+        <div class="container feedback-section__layout">
+          <div class="feedback-intro">
+            <p class="section__eyebrow">LET'S HEAR IT</p>
+
+            <h2 class="feedback-intro__title">
+              Make our next bite <span>even better.</span>
+            </h2>
+
+            <p class="feedback-intro__description">
+              Tell us what you loved, what could be better, or what you'd love
+              to see next. There are no wrong answers.
+            </p>
+
+            <div class="feedback-note">
+              <span class="feedback-note__icon" aria-hidden="true">✳</span>
+              <p>
+                Honest feedback, good vibes, and a little sweetness. That's what
+                we're here for.
+              </p>
+            </div>
+          </div>
+
+          <form class="feedback-form" id="review-form">
+            <div class="feedback-form__heading">
+              <span class="feedback-form__step">YOUR FEEDBACK</span>
+              <h3>Write us a little note.</h3>
+              <p>Fields marked with * are required.</p>
+            </div>
+
+            <div class="form-field">
+              <label for="review-name">Your name *</label>
+              <input
+                type="text"
+                id="review-name"
+                name="name"
+                placeholder="What should we call you?"
+                maxlength="60"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <fieldset class="form-field rating-field">
+              <legend>How was your experience? *</legend>
+
+              <div
+                class="rating-picker"
+                id="rating-picker"
+                role="radiogroup"
+                aria-label="Choose a rating from one to five stars"
+              >
+                <button
+                  type="button"
+                  class="rating-star"
+                  data-rating="1"
+                  role="radio"
+                  aria-checked="false"
+                  aria-label="1 star"
+                >
+                  ★
+                </button>
+                <button
+                  type="button"
+                  class="rating-star"
+                  data-rating="2"
+                  role="radio"
+                  aria-checked="false"
+                  aria-label="2 stars"
+                >
+                  ★
+                </button>
+                <button
+                  type="button"
+                  class="rating-star"
+                  data-rating="3"
+                  role="radio"
+                  aria-checked="false"
+                  aria-label="3 stars"
+                >
+                  ★
+                </button>
+                <button
+                  type="button"
+                  class="rating-star"
+                  data-rating="4"
+                  role="radio"
+                  aria-checked="false"
+                  aria-label="4 stars"
+                >
+                  ★
+                </button>
+                <button
+                  type="button"
+                  class="rating-star"
+                  data-rating="5"
+                  role="radio"
+                  aria-checked="false"
+                  aria-label="5 stars"
+                >
+                  ★
+                </button>
+              </div>
+
+              <p class="rating-hint" id="rating-hint">
+                Tap a star to rate your experience.
+              </p>
+              <input type="hidden" id="review-rating" name="rating" required />
+            </fieldset>
+
+            <div class="form-field">
+              <label for="review-message">Your thoughts *</label>
+              <textarea
+                id="review-message"
+                name="message"
+                rows="5"
+                maxlength="1000"
+                placeholder="What did you think? We'd love to hear it..."
+                required
+              ></textarea>
+              <div class="form-field__meta">
+                <span>Keep it honest. Keep it you.</span>
+                <span id="character-count">0 / 1000</span>
+              </div>
+            </div>
+
+            <label class="feedback-consent">
+              <input type="checkbox" id="review-consent" required />
+              <span>
+                I agree to have this feedback displayed on this device's review
+                page.
+              </span>
+            </label>
+
+            <button
+              type="submit"
+              class="btn btn--primary feedback-form__submit"
+            >
+              Submit Feedback <span aria-hidden="true">↗</span>
+            </button>
+
+            <p class="feedback-form__disclaimer">
+              Prototype mode: reviews are saved only in this browser. They are
+              not sent to Rookees or shared with other visitors.
+            </p>
+
+            <p
+              class="feedback-form__status"
+              id="review-status"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+  </body>
+</html>
