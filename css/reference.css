@@ -140,3 +140,5 @@ h1,h2,h3,h4{color:var(--color-cocoa);font-family:var(--font-heading)}
  .image-float{max-width:160px}.image-float strong{font-size:.64rem}.image-float small{font-size:.57rem}
  .cta-panel{padding:25px}
 }
+
+.site-nav__fallback-brand{display:inline-flex;align-items:center;color:var(--color-cocoa);font-family:var(--font-heading);font-size:1.1rem;font-weight:700;letter-spacing:.12em}
