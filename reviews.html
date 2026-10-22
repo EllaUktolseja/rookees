@@ -55,18 +55,18 @@
             <div>
               <p class="section__eyebrow">THE ROOKEE'S CORNER</p>
               <h2 class="section__title" id="reviews-wall-title">
-                A space for your voice.
+                Your feedback stays with us.
               </h2>
             </div>
 
             <p class="reviews-section-heading__description">
-              Every piece of feedback gives us a new perspective.
+              Feedback is collected privately for internal product improvement and is not published on this page.
             </p>
           </div>
 
           <div class="reviews-empty" id="reviews-empty">
             <span class="reviews-empty__icon" aria-hidden="true">♡</span>
-            <h3>Your words belong here.</h3>
+            <h3>Help us make Rookees better.</h3>
             <p>
               We're making room for our first reviews. Be one of the first to
               share your thoughts with Rookees.
@@ -209,8 +209,9 @@
             <label class="feedback-consent">
               <input type="checkbox" id="review-consent" required />
               <span>
-                I agree to have this feedback displayed on this device's review
-                page.
+                I agree that Rookees may store this feedback in its internal
+                Google Sheets tracker to improve the product. My feedback will
+                not be displayed publicly.
               </span>
             </label>
 
@@ -222,9 +223,13 @@
             </button>
 
             <p class="feedback-form__disclaimer">
-              Prototype mode: reviews are saved only in this browser. They are
-              not sent to Rookees or shared with other visitors.
+              Your feedback is for internal product research and will not be
+              displayed publicly. Please do not include sensitive personal information.
             </p>
+            <div class="form-field" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;">
+              <label for="review-website">Leave this field empty</label>
+              <input type="text" id="review-website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
 
             <p
               class="feedback-form__status"
