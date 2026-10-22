@@ -23,7 +23,7 @@
 
 .story-hero {
   position: relative;
-  padding-block: clamp(68px, 9vw, 120px);
+  padding-block: clamp(56px, 7vw, 92px);
   background: var(--color-cream, #fff7ec);
 }
 
@@ -159,7 +159,7 @@
 /* BEGINNING */
 
 .story-beginning {
-  padding-block: clamp(76px, 10vw, 132px);
+  padding-block: clamp(60px, 7vw, 96px);
   background: var(--color-surface, #fff);
 }
 
@@ -194,7 +194,7 @@
 /* PRODUCT IDEA */
 
 .story-product {
-  padding-block: clamp(68px, 9vw, 116px);
+  padding-block: clamp(56px, 7vw, 92px);
   background: var(--color-cream, #fff7ec);
 }
 
@@ -253,7 +253,7 @@
 /* MARKET OPPORTUNITY */
 
 .story-opportunity {
-  padding-block: clamp(76px, 10vw, 132px);
+  padding-block: clamp(60px, 7vw, 96px);
   background: var(--color-surface, #fff);
 }
 
@@ -334,7 +334,7 @@
 /* VISION */
 
 .story-vision {
-  padding-block: clamp(76px, 10vw, 132px);
+  padding-block: clamp(60px, 7vw, 96px);
   background: var(--color-cream, #fff7ec);
 }
 
@@ -412,7 +412,7 @@
 /* CLOSING CTA */
 
 .story-cta {
-  padding-block: clamp(76px, 10vw, 120px);
+  padding-block: clamp(60px, 7vw, 96px);
   background: var(--color-brown, #39241e);
   color: var(--color-surface, #fff);
 }
