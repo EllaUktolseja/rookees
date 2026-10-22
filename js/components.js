@@ -76,6 +76,7 @@ function renderFooter() {
   footer.innerHTML = `
     <div class="site-footer__inner">
       <div class="site-footer__main">
+<<<<<<< HEAD
         <a
           class="site-footer__logo-link"
           href="./index.html"
@@ -87,6 +88,16 @@ function renderFooter() {
             alt="ROOKEES"
           />
         </a>
+=======
+      
+      <a href="./index.html" aria-label="ROOKEES home">
+        <img
+          class="site-nav__logo"
+          src="./assets/images/rookees-logo.svg"
+          alt="ROOKEES"
+        />
+      </a>
+>>>>>>> df963ab (feat: website components)
 
         <p class="site-footer__description">
           Two classics, one indulgence. A little twist of sweetness

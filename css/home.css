@@ -1,16 +1,8 @@
-/* =========================================================
-   ROOKEES — HOMEPAGE
-   Layout, spacing, and responsive styling
-   ========================================================= */
-
-/* 1. HERO
-   --------------------------------------------------------- */
-
 .hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding-block: clamp(56px, 7vw, 92px) clamp(64px, 8vw, 100px);
+  padding-block: clamp(36px, 5vw, 64px) clamp(40px, 6vw, 72px);
 }
 
 .hero__container {
