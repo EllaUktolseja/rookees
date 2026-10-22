@@ -110,7 +110,7 @@ function initOrderLinks() {
 
   document.querySelectorAll("[data-order-link]").forEach((link) => {
     if (!whatsappNumber) {
-      link.href = "./products.html#order";
+      link.href = "./products.html#product-details";
       link.setAttribute("aria-label", "Order details");
       return;
     }
