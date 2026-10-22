@@ -44,6 +44,28 @@ The frontend sends a URL-encoded cross-origin request in `no-cors` mode, so brow
 - Test all four pages, browser console, image loading, mobile navigation, and form validation.
 - Deploy the repository root as a static site. No build command is needed; the output directory is the repository root.
 
+## Repair the assets Git submodule before deployment
+
+The main repository currently records `assets` as a Git submodule pointer without a `.gitmodules` file. If your local `assets` directory contains the real images and logo, convert it to ordinary tracked files from the project root in PowerShell:
+
+```powershell
+git status
+Get-ChildItem .\assets -Recurse -File | Select-Object FullName, Length
+```
+
+First confirm that the output includes the expected image files. If the directory is empty or the images are missing, stop and restore the assets from your original local copy before continuing. If the files are present and you have pulled the latest `main`:
+
+```powershell
+git rm --cached -f assets
+if (Test-Path .\assets\.git) { Remove-Item .\assets\.git -Recurse -Force }
+git add assets
+git status
+git commit -m "fix: track website assets in main repository"
+git push origin main
+```
+
+This removes Git metadata inside `assets` but keeps the image files; check `git status` carefully before committing. After pushing, verify the `assets/images` files appear as ordinary files in the GitHub repository tree. Do not run the conversion if the local images are not present.
+
 ## Current status
 
 The static pages, shared navigation/footer, WhatsApp links, and Google Sheets submission code are present. Google Sheets collection will not work until the Apps Script web app is deployed and its `/exec` URL is added to `js/config.js`. The image submodule issue is also still a deployment blocker.
