@@ -15,9 +15,9 @@
 .reviews-hero {
   position: relative;
   display: grid;
-  min-height: 440px;
+  min-height: 380px;
   align-items: center;
-  padding-block: clamp(76px, 10vw, 132px);
+  padding-block: clamp(60px, 7vw, 96px);
   overflow: hidden;
   background: var(--color-cream, #fff7ec);
 }
@@ -94,7 +94,7 @@
 /* SECTION HEADINGS */
 
 .reviews-wall {
-  padding-block: clamp(72px, 9vw, 112px);
+  padding-block: clamp(56px, 7vw, 88px);
   background: var(--color-surface, #fff);
 }
 
@@ -228,7 +228,7 @@
 /* FEEDBACK FORM SECTION */
 
 .feedback-section {
-  padding-block: clamp(72px, 9vw, 120px);
+  padding-block: clamp(56px, 7vw, 92px);
   background: var(--color-cream, #fff7ec);
 }
 
