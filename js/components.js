@@ -6,50 +6,27 @@ function renderNavbar() {
   header.innerHTML = `
     <nav class="site-nav" aria-label="Main navigation">
       <div class="site-nav__inner">
-
-        <!-- Left: Brand -->
         <a class="site-nav__brand" href="./index.html" aria-label="ROOKEES home">
-        <img
+          <img
             class="site-nav__logo"
             src="./assets/images/rookees-logo.svg"
             alt="ROOKEES"
-        />
+          />
         </a>
 
-        <!-- Center: Navigation links -->
-        <div
-          class="site-nav__links"
-          id="rookees-navigation"
-          data-site-nav
-        >
-          <a class="site-nav__link" data-nav-link href="./index.html">
-            Home
-          </a>
-
-          <a class="site-nav__link" data-nav-link href="./about.html">
-            Our Story
-          </a>
-
-          <a class="site-nav__link" data-nav-link href="./products.html">
-            Product
-          </a>
-
-          <a class="site-nav__link" data-nav-link href="./reviews.html">
-            Reviews
-          </a>
+        <div class="site-nav__links" id="rookees-navigation" data-site-nav>
+          <a class="site-nav__link" data-nav-link href="./index.html">Home</a>
+          <a class="site-nav__link" data-nav-link href="./about.html">Our Story</a>
+          <a class="site-nav__link" data-nav-link href="./products.html">Product</a>
+          <a class="site-nav__link" data-nav-link href="./reviews.html">Reviews</a>
         </div>
 
-        <!-- Right: Action buttons -->
         <div class="site-nav__actions">
-          <a
-            class="site-nav__button site-nav__button--order"
-            href="./products.html"
-          >
+          <a class="site-nav__button site-nav__button--order" data-order-link href="#">
             Order <span aria-hidden="true">↗</span>
           </a>
         </div>
 
-        <!-- Mobile menu toggle -->
         <button
           class="site-nav__toggle"
           type="button"
@@ -62,7 +39,6 @@ function renderNavbar() {
           <span></span>
           <span></span>
         </button>
-
       </div>
     </nav>
   `;
@@ -76,7 +52,6 @@ function renderFooter() {
   footer.innerHTML = `
     <div class="site-footer__inner">
       <div class="site-footer__main">
-<<<<<<< HEAD
         <a
           class="site-footer__logo-link"
           href="./index.html"
@@ -88,16 +63,6 @@ function renderFooter() {
             alt="ROOKEES"
           />
         </a>
-=======
-      
-      <a href="./index.html" aria-label="ROOKEES home">
-        <img
-          class="site-nav__logo"
-          src="./assets/images/rookees-logo.svg"
-          alt="ROOKEES"
-        />
-      </a>
->>>>>>> df963ab (feat: website components)
 
         <p class="site-footer__description">
           Two classics, one indulgence. A little twist of sweetness
@@ -119,7 +84,7 @@ function renderFooter() {
         <h2 class="site-footer__heading">Get in Touch</h2>
         <div class="site-footer__contact">
           <a href="./reviews.html">Share Your Thoughts ↗</a>
-          <a href="./products.html">Discover Our Product ↗</a>
+          <a data-order-link href="#">Order on WhatsApp ↗</a>
         </div>
       </div>
     </div>
@@ -136,6 +101,24 @@ function initSharedComponents() {
   initMobileNavigation();
   initActiveNavigation();
   initBackToTop();
+  initOrderLinks();
+}
+
+function initOrderLinks() {
+  const whatsappNumber = window.ROOKEES_WHATSAPP_NUMBER || "";
+  const message = "Hi Rookees! I'd like to ask about placing an order.";
+
+  document.querySelectorAll("[data-order-link]").forEach((link) => {
+    if (!whatsappNumber) {
+      link.href = "./products.html#order";
+      link.setAttribute("aria-label", "Order details");
+      return;
+    }
+
+    link.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  });
 }
 
 function initMobileNavigation() {
@@ -176,9 +159,7 @@ function initMobileNavigation() {
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 700) {
-      closeMenu();
-    }
+    if (window.innerWidth > 700) closeMenu();
   });
 }
 
