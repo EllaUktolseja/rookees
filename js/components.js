@@ -76,12 +76,17 @@ function renderFooter() {
   footer.innerHTML = `
     <div class="site-footer__inner">
       <div class="site-footer__main">
-      <img
-            class="site-nav__logo"
+        <a
+          class="site-footer__logo-link"
+          href="./index.html"
+          aria-label="ROOKEES home"
+        >
+          <img
+            class="site-nav__logo site-footer__logo"
             src="./assets/images/rookees-logo.svg"
             alt="ROOKEES"
-            href="./index.html"
-        />
+          />
+        </a>
 
         <p class="site-footer__description">
           Two classics, one indulgence. A little twist of sweetness
