@@ -3,8 +3,8 @@
   position: sticky;
   z-index: 1000;
   top: 0;
-  background: rgb(251 249 245 / 94%);
-  border-bottom: 1px solid rgb(232 223 212 / 75%);
+  background: rgb(233 220 203 / 94%);
+  border-bottom: 1px solid rgb(217 198 182 / 75%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -111,7 +111,7 @@
 .site-nav__cta:hover {
   transform: translateY(-2px);
   border-color: var(--color-gold);
-  background: var(--color-gold);
+  background: var(--color-strawberry);
   color: var(--color-cocoa);
 }
 
@@ -176,8 +176,8 @@
 }
 
 .btn--light:hover {
-  border-color: var(--color-gold);
-  background: var(--color-gold);
+  border-color: var(--color-strawberry);
+  background: var(--color-strawberry);
 }
 
 .btn--outline-light {
@@ -581,8 +581,8 @@
 }
 
 .site-nav__button--order:hover {
-  border-color: var(--color-gold);
-  background: var(--color-gold);
+  border-color: var(--color-strawberry);
+  background: var(--color-strawberry);
   color: var(--color-cocoa);
 }
 
