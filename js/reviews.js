@@ -147,7 +147,7 @@
       ratingHint.textContent = "Tap a star to rate your experience.";
       characterCount.textContent = "0 / 1000";
       setStatus(
-        "Thanks for sharing your feedback! The submission was sent. Because of browser security restrictions, we cannot confirm the spreadsheet write from this page.",
+        "Thanks for sharing your feedback! Your submission request was sent. The browser cannot verify the spreadsheet update, but the Rookees team will review incoming responses.",
         "success",
       );
     } catch (error) {
