@@ -219,3 +219,132 @@ a { text-underline-offset: 4px; }
 }
 .brand-ingredients__allergens p + p { margin-top: 5px; }
 .brand-ingredients__allergens strong { color: var(--color-cocoa); }
+
+
+/* Final visual QA: stronger text contrast and clearer section hierarchy */
+:root {
+  --color-brown: #6F5143;
+  --color-strawberry-ink: #A83F4D;
+  --color-strawberry-soft: #F0B8BA;
+}
+
+.site-nav__link,
+.brand-copy,
+.brand-intro__note,
+.brand-feedback-cta p,
+.brand-story p,
+.brand-product-note p,
+.brand-ingredient-note p,
+.brand-ingredients__note,
+.brand-ingredients__allergens p,
+.brand-review-aside p,
+.brand-review-promise,
+.feedback-consent,
+.feedback-form__disclaimer,
+.rating-hint,
+.form-field__meta {
+  color: var(--color-brown);
+}
+
+.site-nav__link:hover,
+#site-footer a:hover,
+.brand-heading em,
+.brand-highlight,
+.text-link,
+.brand-product-note span,
+.brand-ingredient-note span,
+.brand-ingredients__allergens strong {
+  color: var(--color-strawberry-ink);
+}
+
+.site-nav__cta:hover,
+.site-nav__button--order:hover,
+.btn--primary:hover {
+  border-color: var(--color-strawberry-ink);
+  background: var(--color-strawberry-ink);
+  color: var(--color-white);
+}
+
+.brand-values__heading .brand-eyebrow,
+.brand-about-cta .brand-eyebrow {
+  color: var(--color-strawberry-soft);
+}
+
+.brand-value span {
+  color: var(--color-strawberry-soft);
+}
+
+.brand-feedback-cta__panel {
+  border-color: #D2B8A8;
+  background: var(--color-white);
+  box-shadow: 0 14px 36px rgb(70 46 35 / 7%);
+}
+
+.brand-intro {
+  background: var(--color-surface);
+}
+
+.brand-values {
+  background: #684533;
+}
+
+.brand-product-notes {
+  background: #EDE0D3;
+}
+
+.brand-ingredients__allergens {
+  border-color: #D2B8A8;
+  border-left-color: var(--color-strawberry-ink);
+  background: #FFF9F4;
+}
+
+.brand-review-promise {
+  border-left-color: var(--color-strawberry-ink);
+  background: #FFF9F4;
+}
+
+.feedback-form {
+  border-color: #D2B8A8;
+  background: #FFFCF8;
+}
+
+.form-field input[type="text"],
+.form-field textarea {
+  border-color: #CDB7A8;
+  background: #FFFFFF;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--color-strawberry-ink);
+  box-shadow: 0 0 0 3px rgb(168 63 77 / 16%);
+}
+
+.rating-star.is-active {
+  border-color: #D88B93;
+  background: #FCEBED;
+  color: var(--color-strawberry-ink);
+}
+
+.feedback-consent input {
+  accent-color: var(--color-strawberry-ink);
+}
+
+@media (max-width: 760px) {
+  .brand-home-hero {
+    padding-top: 52px;
+  }
+
+  .brand-home-hero__grid {
+    gap: 30px;
+  }
+
+  .brand-home-hero__stamp {
+    right: 10px;
+    bottom: 18px;
+  }
+
+  .brand-feedback-cta__panel {
+    gap: 22px;
+  }
+}
