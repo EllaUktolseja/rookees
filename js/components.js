@@ -14,7 +14,7 @@ function renderNavbar() {
           <a class="site-nav__link" data-nav-link href="./reviews.html">Reviews</a>
         </div>
         <div class="site-nav__actions">
-          <a class="site-nav__cta" href="./reviews.html">Leave a review <span aria-hidden="true">↗</span></a>
+          <a class="site-nav__cta" href="./reviews.html">Leave a review</a>
         </div>
         <button class="site-nav__toggle" type="button" data-menu-toggle aria-label="Toggle navigation menu" aria-controls="rookees-navigation" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -47,7 +47,7 @@ function renderFooter() {
       <div>
         <h2 class="site-footer__heading">Your voice matters</h2>
         <div class="site-footer__contact">
-          <a href="./reviews.html">Share your experience ↗</a>
+          <a class="btn btn--secondary site-footer__cta" href="./reviews.html">Share your experience</a>
         </div>
       </div>
     </div>
