@@ -1,16 +1,16 @@
 /* Rookees brand refresh — classy, warm, baker-inspired */
 :root {
-  --color-cream: #F3E7D9;
-  --color-surface: #FFF9F4;
-  --color-cocoa: #3D281F;
-  --color-brown: #765341;
-  --color-gold: #C69A68;
-  --color-strawberry: #D98C91;
-  --color-border: #E6D6C8;
-  --color-white: #FFFCF8;
+  --color-cream: #E9DCCB;
+  --color-surface: #F4EADF;
+  --color-cocoa: #76513F;
+  --color-brown: #8B6A58;
+  --color-gold: #F47783;
+  --color-strawberry: #F47783;
+  --color-border: #D9C6B6;
+  --color-white: #FFF9F4;
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "DM Sans", Arial, sans-serif;
-  --shadow-soft: 0 18px 48px rgb(61 40 31 / 9%);
+  --shadow-soft: 0 18px 48px rgb(118 81 63 / 10%);
 }
 body { background: var(--color-surface); color: var(--color-cocoa); }
 h1,h2,h3,h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: -.035em; }
@@ -28,11 +28,11 @@ a { text-underline-offset: 4px; }
 .btn--primary:hover { border-color: var(--color-strawberry); background: var(--color-strawberry); color: var(--color-cocoa); }
 .btn--secondary { border-color: var(--color-brown); color: var(--color-cocoa); }
 .btn--secondary:hover { background: var(--color-cream); border-color: var(--color-strawberry); }
-#site-footer { background: var(--color-cocoa); border: 0; color: var(--color-surface); }
-#site-footer h2,#site-footer a,#site-footer p { color: var(--color-surface); }
-#site-footer a:hover { color: #F0B8BA; }
-.site-footer__description { color: rgb(255 249 244 / 72%) !important; }
-.site-footer__bottom { border-top-color: rgb(255 249 244 / 18%); }
+#site-footer { background: var(--color-surface); border-top: 1px solid var(--color-border); color: var(--color-cocoa); }
+#site-footer h2,#site-footer a,#site-footer p { color: var(--color-cocoa); }
+#site-footer a:hover { color: var(--color-strawberry); }
+.site-footer__description { color: var(--color-brown) !important; }
+.site-footer__bottom { border-top-color: var(--color-border); }
 .brand-home,.brand-about,.brand-reviews { overflow: clip; }
 .brand-container { width: min(calc(100% - 48px), 1180px); margin-inline: auto; }
 .brand-eyebrow { display: inline-flex; align-items: center; gap: 12px; margin: 0 0 18px; color: var(--color-brown); font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
@@ -127,4 +127,76 @@ a { text-underline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+
+/* Soft-sand / mocha / watermelon refinements */
+#site-footer {
+  padding-top: clamp(44px, 6vw, 64px);
+}
+#site-footer .site-footer__logo {
+  max-width: 148px;
+  height: auto;
+}
+#site-footer .site-footer__heading {
+  color: var(--color-cocoa);
+}
+#site-footer .site-footer__links a,
+#site-footer .site-footer__contact a,
+#site-footer .site-footer__bottom p {
+  color: var(--color-brown);
+}
+#site-footer .site-footer__links a:hover,
+#site-footer .site-footer__contact a:hover {
+  color: var(--color-strawberry);
+}
+
+/* Ingredient transparency section */
+.brand-ingredients {
+  padding: clamp(60px, 8vw, 92px) 0;
+  background: var(--color-surface);
+}
+.brand-ingredients__heading {
+  max-width: 720px;
+  margin-bottom: 34px;
+}
+.brand-ingredients__heading h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+.brand-ingredients__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.brand-ingredient-note {
+  padding: clamp(22px, 3vw, 30px);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-white);
+}
+.brand-ingredient-note span {
+  color: var(--color-strawberry);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+.brand-ingredient-note h3 {
+  margin: 14px 0 8px;
+  font-size: 1.4rem;
+}
+.brand-ingredient-note p {
+  margin: 0;
+  color: var(--color-brown);
+  font-size: .9rem;
+  line-height: 1.8;
+}
+.brand-ingredients__note {
+  margin-top: 24px;
+  color: var(--color-brown);
+  font-size: .88rem;
+  line-height: 1.8;
+}
+@media (max-width: 760px) {
+  .brand-ingredients__grid { grid-template-columns: 1fr; }
 }
