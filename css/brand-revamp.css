@@ -348,3 +348,15 @@ a { text-underline-offset: 4px; }
     gap: 22px;
   }
 }
+
+
+/* Keep pink accents readable on darker brand surfaces as well */
+.brand-about-cta {
+  background: #684533;
+}
+
+.brand-home-hero__stamp {
+  border-color: rgb(255 249 244 / 72%);
+  background: var(--color-strawberry-ink);
+  color: var(--color-white);
+}
