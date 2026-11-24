@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Rookees product photo placeholder</title>
+  <desc id="desc">An illustrated brownie-cookie on a warm sand background with a watermelon-pink accent.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4EADF"/><stop offset="1" stop-color="#E9DCCB"/></linearGradient>
+    <linearGradient id="cookie" x1="0" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#A87958"/><stop offset="1" stop-color="#76513F"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+  <rect width="1200" height="1000" fill="url(#bg)"/>
+  <circle cx="950" cy="170" r="175" fill="#F47783" opacity=".22"/>
+  <circle cx="190" cy="820" r="210" fill="#FFF9F4" opacity=".65"/>
+  <ellipse cx="600" cy="720" rx="365" ry="72" fill="#76513F" opacity=".2" filter="url(#shadow)"/>
+  <g transform="translate(600 500) rotate(-8)">
+    <path d="M-315 65 Q-330 -145 -175 -245 Q-15 -350 165 -250 Q330 -160 320 45 Q310 220 120 265 Q-90 310 -245 205 Q-300 165 -315 65Z" fill="#4A2D21"/>
+    <path d="M-285 28 Q-275 -140 -140 -215 Q-5 -292 145 -218 Q280 -150 285 20 Q290 170 105 215 Q-70 260 -215 170 Q-275 130 -285 28Z" fill="url(#cookie)"/>
+    <path d="M-210 -65 Q-145 -165 -40 -175 Q75 -190 160 -115" fill="none" stroke="#D6A47C" stroke-width="28" stroke-linecap="round" opacity=".8"/>
+    <g fill="#3D281F">
+      <circle cx="-150" cy="-85" r="26"/><circle cx="-15" cy="-125" r="22"/><circle cx="130" cy="-60" r="28"/>
+      <circle cx="-85" cy="65" r="25"/><circle cx="75" cy="105" r="24"/><circle cx="205" cy="55" r="18"/>
+    </g>
+    <g fill="#F4D7B9" opacity=".9"><circle cx="-220" cy="35" r="12"/><circle cx="25" cy="-30" r="10"/><circle cx="175" cy="145" r="11"/></g>
+  </g>
+  <text x="600" y="875" text-anchor="middle" fill="#76513F" font-family="Georgia,serif" font-size="54" letter-spacing="8">ROOKEES</text>
+  <text x="600" y="925" text-anchor="middle" fill="#8B6A58" font-family="Arial,sans-serif" font-size="19" letter-spacing="5">PRODUCT PHOTO PLACEHOLDER</text>
+</svg>

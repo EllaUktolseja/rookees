@@ -1,14 +1,14 @@
 :root {
   /* Brand colors */
-  --color-cream: #fbf9f5;
-  --color-surface: #f5f3ef;
-  --color-cocoa: #3d2314;
-  --color-brown: #705341;
-  --color-gold: #d4a359;
-  --color-strawberry: #c83e4d;
-  --color-border: #e8dfd4;
-  --color-white: #ffffff;
-  --color-black: #080808;
+  --color-cream: #e9dccb; /* Soft Sand */
+  --color-surface: #f4eadf; /* Light sand surface */
+  --color-cocoa: #76513f; /* Mocha Brown */
+  --color-brown: #8b6a58; /* Supporting mocha */
+  --color-gold: #f47783; /* Watermelon Pink — legacy accent alias */
+  --color-strawberry: #f47783; /* Watermelon Pink */
+  --color-border: #d9c6b6;
+  --color-white: #fff9f4;
+  --color-black: #2e211b;
 
   /* Typography */
   --font-display: "Bodoni Moda", Georgia, serif;
@@ -34,8 +34,8 @@
   --radius-lg: 24px;
   --radius-pill: 999px;
 
-  --shadow-soft: 0 8px 30px rgb(61 35 20 / 6%);
-  --shadow-card: 0 16px 45px rgb(61 35 20 / 9%);
+  --shadow-soft: 0 8px 30px rgb(118 81 63 / 7%);
+  --shadow-card: 0 16px 45px rgb(118 81 63 / 10%);
 
   /* Animation */
   --transition-fast: 180ms ease;
@@ -153,7 +153,7 @@ p:last-child {
 }
 
 ::selection {
-  background: var(--color-gold);
+  background: var(--color-strawberry);
   color: var(--color-cocoa);
 }
 
@@ -213,7 +213,7 @@ p:last-child {
 
 /* 5. Accessibility */
 :focus-visible {
-  outline: 3px solid var(--color-gold);
+  outline: 3px solid var(--color-strawberry);
   outline-offset: 4px;
 }
 
