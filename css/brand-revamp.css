@@ -201,3 +201,21 @@ a { text-underline-offset: 4px; }
 @media (max-width: 760px) {
   .brand-ingredients__grid { grid-template-columns: 1fr; }
 }
+
+
+.brand-ingredients__allergens {
+  margin-top: 22px;
+  padding: 20px 22px;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-strawberry);
+  border-radius: 10px;
+  background: #F8EEE7;
+}
+.brand-ingredients__allergens p {
+  margin: 0;
+  color: var(--color-brown);
+  font-size: .9rem;
+  line-height: 1.8;
+}
+.brand-ingredients__allergens p + p { margin-top: 5px; }
+.brand-ingredients__allergens strong { color: var(--color-cocoa); }
