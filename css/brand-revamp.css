@@ -360,3 +360,36 @@ a { text-underline-offset: 4px; }
   background: var(--color-strawberry-ink);
   color: var(--color-white);
 }
+
+
+/* Text-only navigation buttons: no decorative arrow or icon add-ons */
+.brand-intro__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  text-decoration: none;
+}
+
+#site-footer .site-footer__cta {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  border: 1px solid var(--color-cocoa);
+  background: transparent;
+  color: var(--color-cocoa);
+  text-decoration: none;
+}
+
+#site-footer .site-footer__cta:hover {
+  border-color: var(--color-strawberry-ink);
+  background: var(--color-strawberry-ink);
+  color: var(--color-white);
+}
+
+.site-nav__cta,
+.btn {
+  text-decoration: none;
+}
