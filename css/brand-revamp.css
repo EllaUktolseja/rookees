@@ -8,8 +8,9 @@
   --color-strawberry: #F47783;
   --color-border: #D9C6B6;
   --color-white: #FFF9F4;
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-body: "DM Sans", Arial, sans-serif;
+  --color-black: #2E211B;
+  --font-display: "Bodoni Moda", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", Arial, sans-serif;
   --shadow-soft: 0 18px 48px rgb(118 81 63 / 10%);
 }
 body { background: var(--color-surface); color: var(--color-cocoa); }
